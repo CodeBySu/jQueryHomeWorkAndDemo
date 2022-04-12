@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+    <style>
+      #d1 {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+      }
+    </style>
+
+    <script>
+      function fun1() {
+        var span1 = $("<span>hello</span>");
+        span1.css("color", "green");
+        span1.css("border", "1px solid blue");
+        span1.text("我吃了火锅");
+
+        //追加到div中去
+        $("#d1").append(span1);
+      }
+      function fun2() {
+        var h = $("<span>hello</span>")
+          .css("color", "pink")
+          .css("border", "2px solid yellow");
+        h.appendTo($("#d1"));
+      }
+      function fun3() {
+        var span1 = $(
+          '<span style="color: red; border: 1px solid orangered;">测试文字</span>'
+        );
+        $("#d1").before(span1);
+      }
+      function fun4() {
+        var span1 = $(
+          '<span style="color: red; border: 1px solid orangered;">测试文字</span>'
+        );
+        span1.insertBefore($("#d1"));
+      }
+      function fun5() {
+        var span1 = $(
+          '<span style="color: red; border: 1px solid orangered;">测试文字</span>'
+        );
+        $("#d1").after(span1);
+      }
+      function fun6() {
+        var span1 = $(
+          '<span style="color: red; border: 1px solid orangered;">测试文字</span>'
+        );
+        span1.insertAfter($("#d1"));
+      }
+      function fun7() {
+        $("#d1").empty();
+      }
+      function fun8() {
+        $("#d1").remove(); // 移除当前元素本身
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="d1"></div>
+    <input type="button" value="testAppend" onclick="fun1()" />
+    <input type="button" value="testAppendTo" onclick="fun2()" />
+    <input type="button" value="testbefore" onclick="fun3()" />
+    <input type="button" value="testinsertBefore" onclick="fun4()" />
+    <input type="button" value="testafter" onclick="fun5()" />
+    <input type="button" value="testInsertAfter" onclick="fun6()" />
+    <input type="button" value="empty" onclick="fun7()" />
+    <input type="button" value="remove" onclick="fun8()" />
+  </body>
+</html>

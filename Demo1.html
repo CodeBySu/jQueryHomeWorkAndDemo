@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .x {
+        background-color: yellow;
+      }
+    </style>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      function fun1() {
+        //获得属性值：标签对象.attr("属性的名字")
+        alert($("#f1").attr("color"));
+        alert($("#f1").attr("id"));
+        alert($("#f1").attr("size"));
+      }
+      function fun2() {
+        //修改属性值，实际上还是attr只不过有两个参数，第一个参数为属性的名字，第二个参数为要修改的属性值
+        $("font").attr("color", "green");
+        $("font").attr("size", "2");
+      }
+      function fun3() {
+        $("#f1").removeAttr("color");
+      }
+      function fun4() {
+        //增加属性值，如果没有的话直接增加，如果有的话改变
+        $("#f1").attr("class", "x");
+      }
+    </script>
+  </head>
+  <body>
+    <font id="f1" color="red" size="7">你好</font>
+    <hr />
+    <input type="button" value="获得属性" onclick="fun1()" />
+    <input type="button" value="修改属性" onclick="fun2()" />
+    <input type="button" value="删除属性" onclick="fun3()" />
+    <input type="button" value="添加属性" onclick="fun4()" />
+  </body>
+</html>

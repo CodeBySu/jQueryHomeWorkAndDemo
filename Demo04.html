@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      a {
+        border: rebeccapurple;
+      }
+      .b {
+        background-color: red;
+      }
+    </style>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(function () {
+        //位置选择器：
+        $("p:first").addClass("b"); //所有p标签中第一个要选择的标签
+        $("p:last").addClass("b"); //所有p标签中最后一个要选择的标签
+        $("p:odd").addClass("b"); //所有p标签中索引为奇数的的标签
+        $("p:even").addClass("b"); //所有p标签中索引为偶数的的标签
+        $("p.eq(4)").addClass("b"); //所有p标签中索引为4的的标签
+        $("p.eq(4)").addClass("b"); //所有p标签中索引为4的的标签
+        $("p.lt(4)").addClass("b"); //所有p标签中索引小于4的的标签
+        $("p.gt(4)").addClass("b"); //所有p标签中索引大于4的的标签
+        $("p:first-child").addClass("b"); //所有p标签中父级下面的第一个子元素的标签
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>1. JavaSE</p>
+      <p>2. Oracle</p>
+    </div>
+    <div>
+      <p>3. HTML/CSS/JS</p>
+      <p>4. jQuery/EasyUI</p>
+      <p>5. JSP/Servlet/Ajax</p>
+    </div>
+    <div>
+      <p>6. SSM</p>
+      <p>7. SpringBoot/SpringCloud/SpringData</p>
+      <p>8. Maven/Linux/p></p>
+      <p>9. Redis/Solr/Nginx</p>
+      <p>10. SpringBoot/SpringCloud/SpringData</p>
+      <p>11. SpringBoot/SpringCloud/SpringData</p>
+      <p>12. SpringBoot/SpringCloud/SpringData</p>
+    </div>
+    <div>
+      <p>13. 就业指导</p>
+    </div>
+  </body>
+</html>

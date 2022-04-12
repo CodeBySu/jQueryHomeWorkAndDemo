@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .a {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+      .b {
+        /*10个像素的绿色边线*/
+        border: 10px solid green;
+        /*边线的圆弧角度*/
+        border-radius: 20px;
+      }
+    </style>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      function fun1() {
+        //获取d1的css样式
+        alert($("#d1").css("width"));
+        alert($("#d1").css("background-color"));
+        //修改样式
+        $("#d1").css("width", "200px");
+        $("#d1").css("height", "200px");
+        $("#d1").css("background-color", "200px");
+      }
+      function fun2() {
+        //增加Class的值来改变css样式
+        $("#d2").addClass("b");
+      }
+      function fun3() {
+        $("#d2").removeClass("b");
+      }
+      function fun4() {
+        $("#d2").toggleClass("b"); //原来有b则删除如果没有则添加，也就是切换的意思
+      }
+    </script>
+  </head>
+  <body>
+    <div id="d1" class="a"></div>
+    <hr />
+    <input type="button" value="获取样式并且修改样式" onclick="fun1()" />
+    <div id="d2" class="a">d2</div>
+    <input type="button" value="添加class" onclick="fun2()" />
+    <input type="button" value="删除class" onclick="fun3()" />
+    <input type="button" value="切换class" onclick="fun4()" />
+  </body>
+</html>

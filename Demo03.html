@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .a {
+        background-color: rebeccapurple;
+      }
+    </style>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(function () {
+        //属性选择器：
+        //$("a[href]").addClass("a")//找所有a标签下有href属性的所有标签
+        $("a[href][title]").addClass("a"); //找所有a标签下有href属性和title属性的所有标签
+        $("a[href='file.html']").addClass("a"); //找所有a标签下有href属性并且属性值为file.html的所有标签
+        $("a[href!='file.html']").addClass("a"); //找所有a标签下有href属性并且属性值不为file.html的所有标签
+        $("a[href^='http']").addClass("a"); //找所有a标签下有href属性并且属性值以http开头的所有标签
+        $("a[href$='html']").addClass("a"); //找所有a标签下有href属性并且属性值以html结尾的所有标签
+        $("a[href*='hello']").addClass("a"); //找所有a标签下有href属性并且属性值包含hello的所有标签
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="msb">
+      <li>
+        <a href="http://www.mashibing.com/job.html">青花瓷</a>
+      </li>
+      <li>
+        <a href="http://www.mashibing.com/dorm">小朋友,你是否有很多问号</a>
+      </li>
+      <li>
+        <a href="http://www.mashibing.com/mobile">羞答答的玫瑰静悄悄的开</a>
+      </li>
+      <li>
+        <a href="http://www.mashibing.com/flag">月半小夜曲</a>
+      </li>
+      <li>
+        <a href="http://www.msb.com/film">单恋一枝花</a>
+        <ul id="film">
+          <li>
+            <a href="film-1.html">乱世佳人</a>
+          </li>
+          <li>
+            <a href="film-2.html" title="阿郎的故事">阿郎的故事</a>
+          </li>
+          <li id="film3">
+            <a href="film-3.html">阿甘正传</a>
+          </li>
+          <li>
+            <a href="http://www.mashibing.com/film/film-4.htm" title="鲁冰花"
+              >鲁冰花</a
+            >
+          </li>
+          <li>
+            <a name="film-5.htm" title="太行山上">太行山上</a>
+          </li>
+          <li>无问西东</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>
