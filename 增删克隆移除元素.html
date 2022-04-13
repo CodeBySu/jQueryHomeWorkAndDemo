@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      function fun1() {
+        var p = $("<p></p>");
+        p.css("background-color", "red");
+        p.text("今天天气很好！");
+        $("p").append(p);
+      }
+      function fun2() {
+        var p = $("<p></p>");
+        p.css("background-color", "red");
+        p.text("标签之前增加");
+        $("p").before(p);
+      }
+      function fun3() {
+        var p = $("<p></p>");
+        p.css("background-color", "red");
+        p.text("标签之后增加");
+        $("p").after(p);
+      }
+      function fun4() {
+        $("p").remove();
+      }
+      function clone() {
+        var col = $("p").clone().text("我是克隆体");
+        col.eq(1).appendTo($("p"));
+      }
+    </script>
+  </head>
+  <body>
+    <p>第一个p标签</p>
+    <p>第二个p标签</p>
+    <p>第三个p标签</p>
+
+    <input type="button" value="追加" onclick="fun1()" />
+    <input type="button" value="在元素之前增加p标签" onclick="fun2()" />
+    <input type="button" value="在元素之后增加p标签" onclick="fun3()" />
+    <input type="button" value="移除p元素" onclick="fun4()" />
+    <input type="button" value="克隆" onclick="clone()" />
+  </body>
+</html>

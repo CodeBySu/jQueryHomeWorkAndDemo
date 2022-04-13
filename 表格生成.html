@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Title</title>
+  </head>
+  <body>
+    宽:<input type="text" id="w" /><br />
+    高:<input type="text" id="h" /><br />
+    行:<input type="text" id="c" /><br />
+    列:<input type="text" id="r" /><br />
+    <input type="button" value="创建表格" id="btn" />
+
+    <script type="text/javascript">
+      document.getElementById("btn").onclick = function () {
+        // 获取属性
+        var w = document.getElementById("w").value + "px";
+        var h = document.getElementById("h").value + "px";
+        var c = parseInt(document.getElementById("c").value);
+        var r = parseInt(document.getElementById("r").value);
+
+        // 使用dom创建并设置颜色
+        var table = document.createElement("table");
+        table.setAttribute("width", w);
+        table.setAttribute("cellspacing", 0);
+        table.setAttribute("height", h);
+        table.setAttribute("border", "1px");
+
+        // 外层是行内层是列
+        for (var i = 0; i < c; i++) {
+          var tr = document.createElement("tr");
+          // 隔行变色
+          if (i % 2 == 0) {
+            tr.style.background = "red";
+          } else {
+            tr.style.background = "blue";
+          }
+          for (var j = 0; j < r; j++) {
+            var td = document.createElement("td");
+            tr.appendChild(td);
+          }
+          table.appendChild(tr);
+        }
+        // 把table添加到页面中
+        document.body.appendChild(table);
+      };
+    </script>
+  </body>
+</html>

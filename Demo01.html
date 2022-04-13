@@ -6,25 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <style>
-      div {
-        border: 1px solid red;
-        width: 100px;
-        height: 100px;
-      }
-      .x {
-        background-color: yellow;
-      }
-    </style>
-
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <script>
-      $(function () {
-        $("#d1").addClass("x");
-      });
+      function fun() {
+        if ($("#username").val() == null || $("#username").val() == " ") {
+          alert("输入不能为空！");
+        }
+        if ($("#password").val().length < 6) {
+          alert("输入的长度不能小于6!");
+        }
+      }
+      function change() {
+        var temp;
+      }
     </script>
   </head>
   <body>
-    <div id="d1"></div>
+    <input type="text" id="username" />
+    <input type="password" id="password" />
+    <input type="button" id="btn" value="判断" onclick="fun()" />
+    <input type="text" id="c1" value="美术" />
+    <input type="text" id="c2" value="数学" />
+    <input type="button" value="交换" onclick="change()" />
   </body>
 </html>
